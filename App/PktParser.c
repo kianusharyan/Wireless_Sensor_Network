@@ -24,25 +24,24 @@ void ParsePkt(void *payloadBfr)
 
         
         PktBfr *pktBfr = payloadBfr;
-        BSP_Ser_Printf("\nHEX:\n");
-        BSP_Ser_Printf("\n%d\n", P1Char);
-        BSP_Ser_Printf("\n%x\n", P1Char);
-            
-        
-        BSP_Ser_Printf("\nHEX:\n");
-        BSP_Ser_Printf("\n%d\n", P2Char);
-        BSP_Ser_Printf("\n%x\n", P2Char);
-        
-        BSP_Ser_Printf("\nHEX:\n");
-        BSP_Ser_Printf("\n%d\n", P1Char);
-        BSP_Ser_Printf("\n%x\n", P1Char);
+//        BSP_Ser_Printf("\nHEX:\n");
+//        BSP_Ser_Printf("\n%d\n", P1Char);
+//        BSP_Ser_Printf("\n%x\n", P1Char);
+//            
+//        
+//        BSP_Ser_Printf("\nHEX:\n");
+//        BSP_Ser_Printf("\n%d\n", P2Char);
+//        BSP_Ser_Printf("\n%x\n", P2Char);
+//        
+//        BSP_Ser_Printf("\nHEX:\n");
+//        BSP_Ser_Printf("\n%d\n", P3Char);
+//        BSP_Ser_Printf("\n%x\n", P3Char);
         for(;;)
         {
             c = GetByte();
-            BSP_Ser_Printf("\nRead:\n");
-            BSP_Ser_Printf("\n%x\n", c);
-            BSP_Ser_Printf("\n%d\n", c);
-
+//            BSP_Ser_Printf("\nRead:\n");
+//            BSP_Ser_Printf("\n%x\n", c);
+//            BSP_Ser_Printf("\n%d\n", c);
 
           switch(parseState)
           {
@@ -55,7 +54,7 @@ void ParsePkt(void *payloadBfr)
              else
              {
                 parseState = ER;
-                BSP_Ser_Printf("\nERR DETECTED\n");
+                BSP_Ser_Printf("\nERR 1 DETECTED\n");
                 //todo: add BYTE 1Err handling
              }
              break;
@@ -67,32 +66,35 @@ void ParsePkt(void *payloadBfr)
              else
              {
                parseState = ER;
-                BSP_Ser_Printf("\nERR DETECTED\n");
+                BSP_Ser_Printf("\nERR 2 DETECTED\n");
                 //todo: add BYTE 2 Err handling
              }
+             break;
           case P3: //Preamble 2 0xAF
-             if (c == P2Char)
+             if (c == P3Char)
              {
-               parseState = T;
+               parseState = K; //next byte is length
              }
              else
              {
                parseState = ER;
-                BSP_Ser_Printf("\nERR DETECTED\n");
+                BSP_Ser_Printf("\nERR 3 DETECTED\n");
                 //todo: add BYTE 2 Err handling
              }
-          case T:
-            pktBfr->msgType = c;
-            parseState = K;
-            break;
+             break;
           case K:
-            pktBfr->dataLen = c - HeaderLength;
+            pktBfr->payLoadLen = c - HeaderLength;
+            //BSP_Ser_Printf("payLoadLen:\n%x\n", c);                      9
+            //BSP_Ser_Printf("payLoadLen:\n%x\n", pktBfr->payLoadLen);        5
+
             parseState = D;
             i = 0;
             break;
           case D:
             pktBfr->data[i++] = c;
-            if (i >= pktBfr->dataLen)
+            BSP_Ser_Printf("c: \n %x \n", c);
+            BSP_Ser_Printf("pktBfr->data: \n %x \n", pktBfr->data[i]);
+            if (i >= pktBfr->payLoadLen)
             {
               parseState = P1;
               return;

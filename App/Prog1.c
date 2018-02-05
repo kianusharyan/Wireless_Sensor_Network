@@ -15,7 +15,6 @@ for program execution.
 /* Include Micrium and STM headers. */
 #include "includes.h"
 
-//#include "PktParser.h"
 
 
 /*----- c o n s t a n t    d e f i n i t i o n s -----*/
@@ -84,10 +83,23 @@ CPU_INT32S AppMain()
 
   Payload payload;
   
+
   for(;;)
   {
       ParsePkt(&payload);
-  }
+
+      switch(payload.msgType)
+  case 1: //temprature
+    BSP_Ser_Printf("payload.payloadLen \n %x \n", payload.payloadLen);
+    BSP_Ser_Printf("payload.dstAddr \n %x \n", payload.dstAddr);
+    BSP_Ser_Printf("payload.srcAddr \n %x \n", payload.srcAddr);
+    BSP_Ser_Printf("payload.msgType \n %x \n", payload.msgType);
+    BSP_Ser_Printf("payload.dataPart.temp \n %d \n", payload.dataPart.temp);
+
+  } 
+  
+
+
   
   return 0;
 }

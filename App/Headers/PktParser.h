@@ -27,8 +27,7 @@ void ParsePkt(void *payloadBfr);
 
 typedef struct
 {
-	CPU_INT08U msgType;
-	CPU_INT08U dataLen;
+	CPU_INT08U payLoadLen;
 	CPU_INT08U data[1];
 } PktBfr;
 
