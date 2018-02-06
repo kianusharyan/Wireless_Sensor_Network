@@ -21,7 +21,7 @@ void ParsePkt(void *payloadBfr)
 	ParserState parseState = P1;
         CPU_INT08U  c;
         CPU_INT08U  i;
-
+        CPU_INT08U  xor_sum = 0;
         
         PktBfr *pktBfr = payloadBfr;
 //        BSP_Ser_Printf("\nHEX:\n");
@@ -42,7 +42,7 @@ void ParsePkt(void *payloadBfr)
 //            BSP_Ser_Printf("\nRead:\n");
 //            BSP_Ser_Printf("\n%x\n", c);
 //            BSP_Ser_Printf("\n%d\n", c);
-
+            xor_sum = xor_sum ^ c;
           switch(parseState)
           {
           
@@ -50,6 +50,10 @@ void ParsePkt(void *payloadBfr)
              if (c == P1Char)
              {
                 parseState = P2;
+                xor_sum = xor_sum ^ c;
+                           // BSP_Ser_Printf("xor_sum: %x \n", xor_sum);
+
+                
              }
              else
              {
@@ -62,6 +66,9 @@ void ParsePkt(void *payloadBfr)
              if (c == P2Char)
              {
                parseState = P3;
+               xor_sum = xor_sum ^ c;
+                             //BSP_Ser_Printf("xor_sum: %x \n", xor_sum);
+
              }
              else
              {
@@ -73,7 +80,10 @@ void ParsePkt(void *payloadBfr)
           case P3: //Preamble 2 0xAF
              if (c == P3Char)
              {
+               xor_sum = xor_sum ^ c;
                parseState = K; //next byte is length
+                             //BSP_Ser_Printf("xor_sum: %x \n", xor_sum);
+
              }
              else
              {
@@ -84,6 +94,7 @@ void ParsePkt(void *payloadBfr)
              break;
           case K:
             pktBfr->payLoadLen = c - HeaderLength;
+            xor_sum = xor_sum ^ c;
             //BSP_Ser_Printf("payLoadLen:\n%x\n", c);                      9
             //BSP_Ser_Printf("payLoadLen:\n%x\n", pktBfr->payLoadLen);        5
 
@@ -92,11 +103,21 @@ void ParsePkt(void *payloadBfr)
             break;
           case D:
             pktBfr->data[i++] = c;
-            BSP_Ser_Printf("c: \n %x \n", c);
-            BSP_Ser_Printf("pktBfr->data: \n %x \n", pktBfr->data[i]);
+
+            BSP_Ser_Printf("c: %x \n", c);
+            BSP_Ser_Printf("pktBfr->data:  %x \n", pktBfr->data[i]);
+            //BSP_Ser_Printf("xor_sum: %x \n", xor_sum);
+
+
+            if (i < pktBfr->payLoadLen)
+            {
+              xor_sum = xor_sum ^ c;
+              //BSP_Ser_Printf("if xor_sum: %x \n", xor_sum);
+            }
+
             if (i >= pktBfr->payLoadLen)
             {
-              parseState = P1;
+             // parseState = P1;
               return;
             }
             break;

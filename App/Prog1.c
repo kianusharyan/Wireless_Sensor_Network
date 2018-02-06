@@ -54,6 +54,7 @@ typedef struct
     } dataPart;
 } Payload;
 
+
 /*--------------- m a i n ( ) -----------------*/
 
 CPU_INT32S main()
@@ -89,13 +90,52 @@ CPU_INT32S AppMain()
       ParsePkt(&payload);
 
       switch(payload.msgType)
-  case 1: //temprature
-    BSP_Ser_Printf("payload.payloadLen \n %x \n", payload.payloadLen);
-    BSP_Ser_Printf("payload.dstAddr \n %x \n", payload.dstAddr);
-    BSP_Ser_Printf("payload.srcAddr \n %x \n", payload.srcAddr);
-    BSP_Ser_Printf("payload.msgType \n %x \n", payload.msgType);
-    BSP_Ser_Printf("payload.dataPart.temp \n %d \n", payload.dataPart.temp);
+      {
+        case 1: //temprature
+          BSP_Ser_Printf("payload.payloadLen \n %x \n", payload.payloadLen);
+          BSP_Ser_Printf("payload.dstAddr \n %x \n", payload.dstAddr);
+          BSP_Ser_Printf("payload.srcAddr \n %x \n", payload.srcAddr);
+          BSP_Ser_Printf("payload.msgType \n %x \n", payload.msgType);
+          BSP_Ser_Printf("SOURCE NODE 2: TEMPERATURE MESSAGE \n Temperature = %d \n", payload.dataPart.temp);
+          break;
+        case 2: //pressure
+          CPU_INT16U reversed_pressure = ((payload.dataPart.pres & 0x00FF) << 8) | ((payload.dataPart.pres & 0xFF00) >> 8);
+          BSP_Ser_Printf("payload.payloadLen \n %x \n", payload.payloadLen);
+          BSP_Ser_Printf("payload.dstAddr \n %x \n", payload.dstAddr);
+          BSP_Ser_Printf("payload.srcAddr \n %x \n", payload.srcAddr);
+          BSP_Ser_Printf("payload.msgType \n %x \n", payload.msgType);
+          BSP_Ser_Printf("SOURCE NODE 3: BAROMETRIC PRESSURE MESSAGE \n Pressure = %d \n", reversed_pressure);
+          break;
+         case 3: //humidity
+          BSP_Ser_Printf("payload.payloadLen \n %x \n", payload.payloadLen);
+          BSP_Ser_Printf("payload.dstAddr \n %x \n", payload.dstAddr);
+          BSP_Ser_Printf("payload.srcAddr \n %x \n", payload.srcAddr);
+          BSP_Ser_Printf("payload.msgType \n %x \n", payload.msgType);
+          BSP_Ser_Printf("SOURCE NODE 4: TEMPERATURE MESSAGE \n Dew Point = %d Humidity = %u \n", payload.dataPart.hum.dewPt, payload.dataPart.hum.hum );
+          break;
+         case 4: //wind
+          CPU_INT08U BCD2 = (payload.dataPart.wind.speed[0] >> 4) & 0x0F;
+          CPU_INT08U BCD1 = payload.dataPart.wind.speed[0] & 0x0F;
+          CPU_INT08U BCD3 = (payload.dataPart.wind.speed[1] >> 4) & 0x0F;
+          CPU_INT08U BCD4 = payload.dataPart.wind.speed[2] & 0x0F;
+          CPU_INT16U reversed_wind = ((payload.dataPart.wind.dir & 0x00FF) << 8) | ((payload.dataPart.wind.dir & 0xFF00) >> 8);
+          BSP_Ser_Printf("payload.payloadLen \n %x \n", payload.payloadLen);
+          BSP_Ser_Printf("payload.dstAddr \n %x \n", payload.dstAddr);
+          BSP_Ser_Printf("payload.srcAddr \n %x \n", payload.srcAddr);
+          BSP_Ser_Printf("payload.msgType \n %x \n", payload.msgType);
+          BSP_Ser_Printf("SOURCE NODE 5: WIND MESSAGE \n Speed = %d%d%d.%d Wind Direction = %u \n",BCD2,BCD1,BCD3,BCD4, reversed_wind );
+          break;
+         case 5: //wind
 
+          CPU_INT16U reversed_radiation = ((payload.dataPart.rad & 0x00FF) << 8) | ((payload.dataPart.rad & 0xFF00) >> 8);
+          BSP_Ser_Printf("payload.payloadLen \n %x \n", payload.payloadLen);
+          BSP_Ser_Printf("payload.dstAddr \n %x \n", payload.dstAddr);
+          BSP_Ser_Printf("payload.srcAddr \n %x \n", payload.srcAddr);
+          BSP_Ser_Printf("payload.msgType \n %x \n", payload.msgType);
+          BSP_Ser_Printf("SOURCE NODE 6: SOLAR RADIATION MESSAGE \n Solar Radiation Intensity = %d \n", reversed_radiation);
+          break;
+
+      }
   } 
   
 
