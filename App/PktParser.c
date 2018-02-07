@@ -14,6 +14,7 @@ adjusts to proper type, depending on message parameters.
 #include "includes.h"
 
 #include "PktParser.h"
+#include "Error.h"
 
 
 void ParsePkt(void *payloadBfr)
@@ -51,15 +52,12 @@ void ParsePkt(void *payloadBfr)
              {
                 parseState = P2;
                 xor_sum = xor_sum ^ c;
-                           // BSP_Ser_Printf("xor_sum: %x \n", xor_sum);
-
-                
              }
              else
              {
-                parseState = ER;
-                BSP_Ser_Printf("\nERR 1 DETECTED\n");
-                //todo: add BYTE 1Err handling
+                Set_Preamble1_Error();
+                Print_Errors();
+                parseState = SYNC;
              }
              break;
           case P2: //Preamble 2 0xEF
@@ -67,14 +65,12 @@ void ParsePkt(void *payloadBfr)
              {
                parseState = P3;
                xor_sum = xor_sum ^ c;
-                             //BSP_Ser_Printf("xor_sum: %x \n", xor_sum);
-
              }
              else
              {
-               parseState = ER;
-                BSP_Ser_Printf("\nERR 2 DETECTED\n");
-                //todo: add BYTE 2 Err handling
+                Set_Preamble2_Error();
+                Print_Errors();
+                parseState = SYNC;
              }
              break;
           case P3: //Preamble 2 0xAF
@@ -87,17 +83,20 @@ void ParsePkt(void *payloadBfr)
              }
              else
              {
-               parseState = ER;
-                BSP_Ser_Printf("\nERR 3 DETECTED\n");
-                //todo: add BYTE 2 Err handling
+                Set_Preamble3_Error();
+                Print_Errors();
+                parseState = SYNC;
              }
              break;
           case K:
             pktBfr->payLoadLen = c - HeaderLength;
+            if (pktBfr->payLoadLen > 8)
+            {
+                Set_PacketLength_Error;
+                Print_Errors();
+                parseState = SYNC;
+            }
             xor_sum = xor_sum ^ c;
-            //BSP_Ser_Printf("payLoadLen:\n%x\n", c);                      9
-            //BSP_Ser_Printf("payLoadLen:\n%x\n", pktBfr->payLoadLen);        5
-
             parseState = D;
             i = 0;
             break;
@@ -108,7 +107,12 @@ void ParsePkt(void *payloadBfr)
             BSP_Ser_Printf("pktBfr->data:  %x \n", pktBfr->data[i]);
             //BSP_Ser_Printf("xor_sum: %x \n", xor_sum);
 
-
+            if(pktBfr->data[0] != 0x01)
+            {
+                Set_Destination_Addr_Error();
+                Print_Errors();
+                parseState = SYNC;
+            }
             if (i < pktBfr->payLoadLen)
             {
               xor_sum = xor_sum ^ c;
@@ -117,14 +121,22 @@ void ParsePkt(void *payloadBfr)
 
             if (i >= pktBfr->payLoadLen)
             {
-             // parseState = P1;
+
+              if(c != xor_sum)
+              {
+                Set_Checksum_Error();
+                Print_Errors();
+                parseState = SYNC;
+              } 
+              parseState = P1;
               return;
             }
             break;
-          case ER:
-            if (c == P1Char)
-              parseState = P2;
-            break;
+          case SYNC:
+             if ( c == P1Char) //skip until first preamble byte
+             {
+               parseState = P2;
+             }
           }//end switch
           
         }//end forever loop

@@ -1047,7 +1047,7 @@
         <group>
             <name>Headers</name>
             <file>
-                <name>$PROJ_DIR$\Error.h</name>
+                <name>$PROJ_DIR$\Headers\Error.h</name>
             </file>
             <file>
                 <name>$PROJ_DIR$\includes.h</name>

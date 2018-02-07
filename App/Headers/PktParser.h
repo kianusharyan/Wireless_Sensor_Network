@@ -14,7 +14,7 @@
 
 
 //Parser state data type
-typedef enum { P1, P2, P3, T, K, D, ER } ParserState;
+typedef enum { P1, P2, P3, T, K, D, SYNC} ParserState;
 
 //Packer structure data type 
   typedef struct

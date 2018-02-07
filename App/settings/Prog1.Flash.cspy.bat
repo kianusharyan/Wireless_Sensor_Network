@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical Intelligence\Spring 2018\Embedded Real Time Systems EECE5720\Programs\Wireless_Sensor_Network\App\settings\Prog1.Flash.general.xcl" --backend -f "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical Intelligence\Spring 2018\Embedded Real Time Systems EECE5720\Programs\Wireless_Sensor_Network\App\settings\Prog1.Flash.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\kianu\Programs\Wireless_Sensor_Network\App\settings\Prog1.Flash.general.xcl" --backend -f "C:\Users\kianu\Programs\Wireless_Sensor_Network\App\settings\Prog1.Flash.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical Intelligence\Spring 2018\Embedded Real Time Systems EECE5720\Programs\Wireless_Sensor_Network\App\settings\Prog1.Flash.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical Intelligence\Spring 2018\Embedded Real Time Systems EECE5720\Programs\Wireless_Sensor_Network\App\settings\Prog1.Flash.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\kianu\Programs\Wireless_Sensor_Network\App\settings\Prog1.Flash.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\kianu\Programs\Wireless_Sensor_Network\App\settings\Prog1.Flash.driver.xcl" 
 
 @echo off 
 :end

@@ -11,15 +11,15 @@ Contains main program and any functions init that must be called for
 for program execution.
 
 */
-#pragma pack(1) //Don't align on word boundaries
+
 /* Include Micrium and STM headers. */
 #include "includes.h"
-//#include "PktParser.h"
-
+#include "Error.h"
 
 /*----- c o n s t a n t    d e f i n i t i o n s -----*/
 
 #define BaudRate 9600           /* RS232 Port Baud Rate */
+#pragma pack(1) //Don't align on word boundaries
 
 
 /*----- Structures ------*/
@@ -128,11 +128,13 @@ CPU_INT32S AppMain()
         PrintID(payload);
         break;
       default:
-        BSP_Ser_Printf("\nDefault Case in Prog1.c: msgType not defined\n");
+        Set_Unknown_Msg_Error;
+        Print_Errors();
         break; //redundancy
       }
       
-      break;
+      
+
   } 
   
 
@@ -201,22 +203,31 @@ void PrintRadiation(Payload payload)
 
 void PrintDateTime(Payload payload)
 {
+          CPU_INT08U Hour =(((1 << 4) - 1) & (payload.dataPart.dateTime >> (0 - 1)));
+          CPU_INT08U Minute = payload.dataPart.dateTime & 0x1F80;
+          CPU_INT08U Year = payload.dataPart.dateTime >> 8;
+          CPU_INT08U Month = payload.dataPart.dateTime >> 4;
+          CPU_INT08U Day = payload.dataPart.dateTime >> 0;
           BSP_Ser_Printf("payload.payloadLen \n %x \n", payload.payloadLen);
           BSP_Ser_Printf("payload.dstAddr \n %x \n", payload.dstAddr);
           BSP_Ser_Printf("payload.srcAddr \n %x \n", payload.srcAddr);
           BSP_Ser_Printf("payload.msgType \n %x \n", payload.msgType);
-          BSP_Ser_Printf("SOURCE NODE 6: SOLAR RADIATION MESSAGE \n Hour = %d \n", payload.dataPart.dateTime >> 26 );
-          BSP_Ser_Printf("SOURCE NODE 6: SOLAR RADIATION MESSAGE \n Minute = %d \n", payload.dataPart.dateTime >> 20);
-          BSP_Ser_Printf("SOURCE NODE 6: SOLAR RADIATION MESSAGE \n Year = %d \n", payload.dataPart.dateTime >> 8);
-          BSP_Ser_Printf("SOURCE NODE 6: SOLAR RADIATION MESSAGE \n Month = %d \n", payload.dataPart.dateTime >> 4);
-          BSP_Ser_Printf("SOURCE NODE 6: SOLAR RADIATION MESSAGE \n Day = %d \n", payload.dataPart.dateTime >> 0);
-
-  
+          BSP_Ser_Printf("SOURCE NODE 7: DATE/TIME STAMP MESSAGE \n Hour = %d \n", Hour );
+          BSP_Ser_Printf("SOURCE NODE 7: DATE/TIME STAMP MESSAGE \n Minute = %d \n", Minute );
+          BSP_Ser_Printf("SOURCE NODE 7: DATE/TIME STAMP MESSAGE \n Year = %d \n", Year );
+          BSP_Ser_Printf("SOURCE NODE 7: DATE/TIME STAMP MESSAGE \n Month = %d \n", Month);
+          BSP_Ser_Printf("SOURCE NODE 7: DATE/TIME STAMP MESSAGE \n Day = %d \n", Day);
 }
 void PrintPrecipitation(Payload payload)
 {
+          CPU_INT08U BCD2 = (payload.dataPart.depth[0] >> 4) & 0x0F;
+          CPU_INT08U BCD1 = payload.dataPart.depth[0] & 0x0F;
+          CPU_INT08U BCD3 = (payload.dataPart.depth[1] >> 4) & 0x0F;
+          CPU_INT08U BCD4 = payload.dataPart.depth[2] & 0x0F;
+          BSP_Ser_Printf("SOURCE NODE 8: PRECIPITATION MESSAGE \n Speed = %d%d.%d%d",BCD2,BCD1,BCD3,BCD4 );
+
 }
 void PrintID(Payload payload)
 {
-  
+         BSP_Ser_Printf("SOURCE NODE 9: Node ID = %c \n", payload.dataPart.id);
 }
