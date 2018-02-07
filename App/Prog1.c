@@ -14,16 +14,13 @@ for program execution.
 #pragma pack(1) //Don't align on word boundaries
 /* Include Micrium and STM headers. */
 #include "includes.h"
-
+//#include "PktParser.h"
 
 
 /*----- c o n s t a n t    d e f i n i t i o n s -----*/
 
 #define BaudRate 9600           /* RS232 Port Baud Rate */
-  
-/*----- f u n c t i o n    p r o t o t y p e s -----*/
 
-int AppMain();
 
 /*----- Structures ------*/
 typedef struct
@@ -50,9 +47,24 @@ typedef struct
       CPU_INT16U    rad;
       CPU_INT32U    dateTime;
       CPU_INT08U    depth[2]; //don't use hard coded
-      CPU_INT08U    id[10]    //don't use hard coded
+      CPU_INT08U    id[10];    //don't use hard coded
     } dataPart;
 } Payload;
+
+/*----- f u n c t i o n    p r o t o t y p e s -----*/
+
+int AppMain();
+
+CPU_INT16U convertEndianess(CPU_INT16U convert);
+CPU_INT08U convertBCD(CPU_INT08U noncoded);
+void PrintTemprature(Payload payload);
+void PrintPressure(Payload payload);
+void PrintHumidity(Payload payload);
+void PrintWind(Payload payload);
+void PrintRadiation(Payload payload);
+void PrintDateTime(Payload payload);
+void PrintPrecipitation(Payload payload);
+void PrintID(Payload payload);
 
 
 /*--------------- m a i n ( ) -----------------*/
@@ -80,40 +92,91 @@ CPU_INT32S main()
 CPU_INT32S AppMain()
 {
 
- BSP_Ser_Printf("\nsPROGRAM STARTED...\n");
+ BSP_Ser_Printf("\n*************************************PROGRAM STARTED...*************************************\n");
 
   Payload payload;
   
 
-  for(;;)
+  while(1)
   {
       ParsePkt(&payload);
 
       switch(payload.msgType)
       {
-        case 1: //temprature
+      case 1: //temprature
+         PrintTemprature(payload);
+         break;
+      case 2: //pressure
+         PrintPressure(payload);
+         break;
+      case 3: //humidity
+         PrintHumidity(payload);
+         break;
+      case 4: //wind
+         PrintWind(payload);
+         break;
+      case 5: //radiation
+        PrintRadiation(payload);
+        break;
+      case 6: //date and time
+        PrintDateTime(payload);
+        break;
+      case 7: //precipitation
+        PrintPrecipitation(payload);
+        break;
+      case 8: //ID message
+        PrintID(payload);
+        break;
+      default:
+        BSP_Ser_Printf("\nDefault Case in Prog1.c: msgType not defined\n");
+        break; //redundancy
+      }
+      
+      break;
+  } 
+  
+
+  BSP_Ser_Printf("\ns*************************************PROGRAM ENDED...*************************************n");
+
+  return 0;
+}
+
+CPU_INT08U convertBCD(CPU_INT08U noncoded)
+{
+  return noncoded;
+}
+CPU_INT16U convertEndianess(CPU_INT16U convert)
+{
+  return convert;
+}
+void PrintTemprature(Payload payload){
           BSP_Ser_Printf("payload.payloadLen \n %x \n", payload.payloadLen);
           BSP_Ser_Printf("payload.dstAddr \n %x \n", payload.dstAddr);
           BSP_Ser_Printf("payload.srcAddr \n %x \n", payload.srcAddr);
           BSP_Ser_Printf("payload.msgType \n %x \n", payload.msgType);
           BSP_Ser_Printf("SOURCE NODE 2: TEMPERATURE MESSAGE \n Temperature = %d \n", payload.dataPart.temp);
-          break;
-        case 2: //pressure
+}
+void PrintPressure(Payload payload)
+{
           CPU_INT16U reversed_pressure = ((payload.dataPart.pres & 0x00FF) << 8) | ((payload.dataPart.pres & 0xFF00) >> 8);
           BSP_Ser_Printf("payload.payloadLen \n %x \n", payload.payloadLen);
           BSP_Ser_Printf("payload.dstAddr \n %x \n", payload.dstAddr);
           BSP_Ser_Printf("payload.srcAddr \n %x \n", payload.srcAddr);
           BSP_Ser_Printf("payload.msgType \n %x \n", payload.msgType);
           BSP_Ser_Printf("SOURCE NODE 3: BAROMETRIC PRESSURE MESSAGE \n Pressure = %d \n", reversed_pressure);
-          break;
-         case 3: //humidity
+
+}
+void PrintHumidity(Payload payload)
+{
           BSP_Ser_Printf("payload.payloadLen \n %x \n", payload.payloadLen);
           BSP_Ser_Printf("payload.dstAddr \n %x \n", payload.dstAddr);
           BSP_Ser_Printf("payload.srcAddr \n %x \n", payload.srcAddr);
           BSP_Ser_Printf("payload.msgType \n %x \n", payload.msgType);
           BSP_Ser_Printf("SOURCE NODE 4: TEMPERATURE MESSAGE \n Dew Point = %d Humidity = %u \n", payload.dataPart.hum.dewPt, payload.dataPart.hum.hum );
-          break;
-         case 4: //wind
+
+}
+void PrintWind(Payload payload)
+{
           CPU_INT08U BCD2 = (payload.dataPart.wind.speed[0] >> 4) & 0x0F;
           CPU_INT08U BCD1 = payload.dataPart.wind.speed[0] & 0x0F;
           CPU_INT08U BCD3 = (payload.dataPart.wind.speed[1] >> 4) & 0x0F;
@@ -124,22 +187,36 @@ CPU_INT32S AppMain()
           BSP_Ser_Printf("payload.srcAddr \n %x \n", payload.srcAddr);
           BSP_Ser_Printf("payload.msgType \n %x \n", payload.msgType);
           BSP_Ser_Printf("SOURCE NODE 5: WIND MESSAGE \n Speed = %d%d%d.%d Wind Direction = %u \n",BCD2,BCD1,BCD3,BCD4, reversed_wind );
-          break;
-         case 5: //wind
+}
 
+void PrintRadiation(Payload payload)
+{
           CPU_INT16U reversed_radiation = ((payload.dataPart.rad & 0x00FF) << 8) | ((payload.dataPart.rad & 0xFF00) >> 8);
           BSP_Ser_Printf("payload.payloadLen \n %x \n", payload.payloadLen);
           BSP_Ser_Printf("payload.dstAddr \n %x \n", payload.dstAddr);
           BSP_Ser_Printf("payload.srcAddr \n %x \n", payload.srcAddr);
           BSP_Ser_Printf("payload.msgType \n %x \n", payload.msgType);
           BSP_Ser_Printf("SOURCE NODE 6: SOLAR RADIATION MESSAGE \n Solar Radiation Intensity = %d \n", reversed_radiation);
-          break;
+}
 
-      }
-  } 
+void PrintDateTime(Payload payload)
+{
+          BSP_Ser_Printf("payload.payloadLen \n %x \n", payload.payloadLen);
+          BSP_Ser_Printf("payload.dstAddr \n %x \n", payload.dstAddr);
+          BSP_Ser_Printf("payload.srcAddr \n %x \n", payload.srcAddr);
+          BSP_Ser_Printf("payload.msgType \n %x \n", payload.msgType);
+          BSP_Ser_Printf("SOURCE NODE 6: SOLAR RADIATION MESSAGE \n Hour = %d \n", payload.dataPart.dateTime >> 26 );
+          BSP_Ser_Printf("SOURCE NODE 6: SOLAR RADIATION MESSAGE \n Minute = %d \n", payload.dataPart.dateTime >> 20);
+          BSP_Ser_Printf("SOURCE NODE 6: SOLAR RADIATION MESSAGE \n Year = %d \n", payload.dataPart.dateTime >> 8);
+          BSP_Ser_Printf("SOURCE NODE 6: SOLAR RADIATION MESSAGE \n Month = %d \n", payload.dataPart.dateTime >> 4);
+          BSP_Ser_Printf("SOURCE NODE 6: SOLAR RADIATION MESSAGE \n Day = %d \n", payload.dataPart.dateTime >> 0);
+
   
-
-
+}
+void PrintPrecipitation(Payload payload)
+{
+}
+void PrintID(Payload payload)
+{
   
-  return 0;
 }

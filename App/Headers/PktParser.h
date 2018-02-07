@@ -17,7 +17,11 @@
 typedef enum { P1, P2, P3, T, K, D, ER } ParserState;
 
 //Packer structure data type 
-  
+  typedef struct
+{
+	CPU_INT08U payLoadLen;
+	CPU_INT08U data[1];
+} PktBfr;
 
 /*----- f u n c t i o n    p r o t o t y p e s -----*/
 
@@ -25,10 +29,6 @@ CPU_INT08U GetByte();
 
 void ParsePkt(void *payloadBfr);
 
-typedef struct
-{
-	CPU_INT08U payLoadLen;
-	CPU_INT08U data[1];
-} PktBfr;
+
 
 #endif
