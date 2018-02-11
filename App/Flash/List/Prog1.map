@@ -1,61 +1,151 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.20.2.14835/W32 for ARM                07/Feb/2018  23:52:57
+# IAR ELF Linker V8.20.2.14835/W32 for ARM                10/Feb/2018  21:42:26
 # Copyright 2007-2017 IAR Systems AB.
 #
 #    Output file  =  
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Exe\Prog1.out
+#        C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Exe\Prog1.out
 #    Map file     =  
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\List\Prog1.map
+#        C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\List\Prog1.map
 #    Command line =  
-#        -f C:\Users\kianu\AppData\Local\Temp\EWD1B0.tmp
-#        (C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\app_vect.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\bsp.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\bsp_i2c.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\bsp_int.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\bsp_os.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\bsp_periph.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\bsp_ser.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\bsp_stlm75.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\Error.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\os_app_hooks.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\os_cfg_app.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\os_dbg.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\PktParser.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\Prog1.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_adc.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_bkp.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_can.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_crc.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_dac.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_dbgmcu.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_dma.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_exti.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_flash.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_fsmc.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_gpio.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_i2c.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_iwdg.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_lib.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_nvic.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_pwr.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_rcc.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_rtc.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_sdio.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_spi.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_systick.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_tim.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_usart.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_wwdg.o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\uCOS-III-Lib\uC-CPU-CM3-IAR.a
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\uCOS-III-Lib\uC-LIB-CM3-IAR.a
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\uCOS-III-Lib\uCOS-III-CM3-IAR.a
+#        -f C:\Users\Kian\AppData\Local\Temp\EW3495.tmp
+#        ("C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\app_vect.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\bsp.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\bsp_i2c.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\bsp_int.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\bsp_os.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\bsp_periph.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\bsp_ser.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\bsp_stlm75.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\Error.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\os_app_hooks.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\os_cfg_app.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\os_dbg.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\PktParser.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\Prog1.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_adc.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_bkp.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_can.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_crc.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_dac.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_dbgmcu.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_dma.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_exti.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_flash.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_fsmc.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_gpio.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_i2c.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_iwdg.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_lib.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_nvic.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_pwr.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_rcc.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_rtc.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_sdio.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_spi.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_systick.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_tim.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_usart.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj\stm32f10x_wwdg.o"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\uCOS-III-Lib\uC-CPU-CM3-IAR.a"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\uCOS-III-Lib\uC-LIB-CM3-IAR.a"
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\uCOS-III-Lib\uCOS-III-CM3-IAR.a"
 #        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb -o
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Exe\Prog1.out
-#        --map
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\List\Prog1.map
-#        --config
-#        C:\Users\kianu\Programs\Wireless_Sensor_Network\App\..\BSP\STM32_FLASH.icf
+#        "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Exe\Prog1.out"
+#        --map "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\Flash\List\Prog1.map"
+#        --config "C:\Users\Kian\Documents\UMASS Lowell Masters Artifical
+#        Intelligence\Spring 2018\Embedded Real Time Systems
+#        EECE5720\Programs\Wireless_Sensor_Network\App\..\BSP\STM32_FLASH.icf"
 #        --semihosting --entry __iar_program_start --vfe --text_out locale)
 #
 ###############################################################################
@@ -100,7 +190,7 @@ No sections matched the following patterns:
   .intvec          const    0x08000000   0x150  app_vect.o [1]
                           - 0x08000150   0x150
 
-"P2":                                   0x3b1c
+"P2":                                   0x3a54
   .text            ro code  0x08000150   0xe1e  xprintffull_nomb.o [3]
   .text            ro code  0x08000f6e     0xe  app_vect.o [1]
   .text            ro code  0x08000f7c    0x16  strchr.o [5]
@@ -136,61 +226,61 @@ No sections matched the following patterns:
   .text            ro code  0x08002a0c    0x44  stm32f10x_flash.o [1]
   .text            ro code  0x08002a50   0x164  stm32f10x_gpio.o [1]
   .text            ro code  0x08002bb4   0x2a8  bsp_int.o [1]
-  .text            ro code  0x08002e5c   0x268  Prog1.o [1]
-  .text            ro code  0x080030c4   0x124  bsp_ser.o [1]
-  .text            ro code  0x080031e8   0x16c  PktParser.o [1]
-  .text            ro code  0x08003354    0xe8  Error.o [1]
-  .text            ro code  0x0800343c    0x90  bsp_periph.o [1]
-  .text            ro code  0x080034cc    0xe8  stm32f10x_usart.o [1]
-  .text            ro code  0x080035b4    0x38  vsprintf.o [3]
-  .text            ro code  0x080035ec   0x104  os_task.o [9]
-  .text            ro code  0x080036f0    0xf0  os_cpu_c.o [9]
-  .text            ro code  0x080037e0    0x60  os_time.o [9]
-  .rodata          const    0x08003840    0x60  Prog1.o [1]
-  .rodata          const    0x080038a0    0x4c  Prog1.o [1]
-  .rodata          const    0x080038ec    0x4c  Prog1.o [1]
-  .rodata          const    0x08003938    0x48  Prog1.o [1]
-  .rodata          const    0x08003980    0x44  Prog1.o [1]
-  .rodata          const    0x080039c4    0x40  Prog1.o [1]
-  .text            ro code  0x08003a04    0x40  zero_init3.o [5]
-  .rodata          const    0x08003a44    0x38  Prog1.o [1]
-  .rodata          const    0x08003a7c    0x30  Prog1.o [1]
-  .rodata          const    0x08003aac    0x2c  Prog1.o [1]
-  .text            ro code  0x08003ad8    0x28  data_init.o [5]
-  .rodata          const    0x08003b00    0x24  Error.o [1]
-  .rodata          const    0x08003b24    0x24  Error.o [1]
-  .rodata          const    0x08003b48    0x24  Error.o [1]
-  .rodata          const    0x08003b6c    0x24  Error.o [1]
-  .iar.init_table  const    0x08003b90    0x10  - Linker created -
-  .rodata          const    0x08003ba0    0x20  Error.o [1]
-  .rodata          const    0x08003bc0    0x20  Prog1.o [1]
-  .text            ro code  0x08003be0    0x1e  cmain.o [5]
-  .text            ro code  0x08003bfe     0x4  low_level_init.o [3]
-  .text            ro code  0x08003c02     0x4  exit.o [3]
-  .text            ro code  0x08003c08     0xa  cexit.o [5]
-  .rodata          const    0x08003c14    0x1c  Error.o [1]
-  .rodata          const    0x08003c30    0x1c  Error.o [1]
-  .rodata          const    0x08003c4c    0x10  stm32f10x_rcc.o [1]
-  .text            ro code  0x08003c5c     0xc  cstartup_M.o [5]
-  .rodata          const    0x08003c68     0x4  stm32f10x_rcc.o [1]
-  .rodata          const    0x08003c6c     0x0  zero_init3.o [5]
-                          - 0x08003c6c  0x3b1c
+  .text            ro code  0x08002e5c   0x284  Prog1.o [1]
+  .text            ro code  0x080030e0   0x124  bsp_ser.o [1]
+  .text            ro code  0x08003204   0x134  PktParser.o [1]
+  .text            ro code  0x08003338    0x94  Error.o [1]
+  .text            ro code  0x080033cc    0x90  bsp_periph.o [1]
+  .text            ro code  0x0800345c    0xe8  stm32f10x_usart.o [1]
+  .text            ro code  0x08003544    0x38  vsprintf.o [3]
+  .text            ro code  0x0800357c   0x104  os_task.o [9]
+  .text            ro code  0x08003680    0xf0  os_cpu_c.o [9]
+  .text            ro code  0x08003770    0x60  os_time.o [9]
+  .rodata          const    0x080037d0    0x4c  Prog1.o [1]
+  .rodata          const    0x0800381c    0x4c  Prog1.o [1]
+  .rodata          const    0x08003868    0x48  Prog1.o [1]
+  .rodata          const    0x080038b0    0x44  Prog1.o [1]
+  .rodata          const    0x080038f4    0x40  Prog1.o [1]
+  .text            ro code  0x08003934    0x40  zero_init3.o [5]
+  .rodata          const    0x08003974    0x3c  Prog1.o [1]
+  .rodata          const    0x080039b0    0x30  Prog1.o [1]
+  .rodata          const    0x080039e0    0x2c  Prog1.o [1]
+  .text            ro code  0x08003a0c    0x28  data_init.o [5]
+  .rodata          const    0x08003a34    0x24  Error.o [1]
+  .rodata          const    0x08003a58    0x24  Error.o [1]
+  .rodata          const    0x08003a7c    0x24  Error.o [1]
+  .rodata          const    0x08003aa0    0x24  Error.o [1]
+  .iar.init_table  const    0x08003ac4    0x10  - Linker created -
+  .rodata          const    0x08003ad4    0x20  Error.o [1]
+  .rodata          const    0x08003af4    0x20  Error.o [1]
+  .rodata          const    0x08003b14    0x20  Prog1.o [1]
+  .text            ro code  0x08003b34    0x1e  cmain.o [5]
+  .text            ro code  0x08003b52     0x4  low_level_init.o [3]
+  .text            ro code  0x08003b56     0x4  exit.o [3]
+  .text            ro code  0x08003b5c     0xa  cexit.o [5]
+  .rodata          const    0x08003b68    0x1c  Error.o [1]
+  .rodata          const    0x08003b84    0x10  stm32f10x_rcc.o [1]
+  .text            ro code  0x08003b94     0xc  cstartup_M.o [5]
+  .rodata          const    0x08003ba0     0x4  stm32f10x_rcc.o [1]
+  .rodata          const    0x08003ba4     0x0  zero_init3.o [5]
+                          - 0x08003ba4  0x3a54
 
-"P3", part 1 of 2:                       0x490
+"P3", part 1 of 2:                       0x488
   .bss             zero     0x20000000   0x110  bsp_int.o [1]
   .bss             zero     0x20000110    0xd0  __dbg_uCOS-III.o [9]
   .bss             zero     0x200001e0    0xd0  __dbg_uCOS-III.o [9]
   .bss             zero     0x200002b0    0xd0  __dbg_uCOS-III.o [9]
   .bss             zero     0x20000380    0x60  __dbg_uCOS-III.o [9]
   .bss             zero     0x200003e0    0x54  bsp_ser.o [1]
-  .bss             zero     0x20000434     0x8  Error.o [1]
-  .bss             zero     0x2000043c     0x4  bsp.o [1]
-  .bss             zero     0x20000440     0x4  os_cpu_c.o [9]
+  .bss             zero     0x20000434     0x4  bsp.o [1]
+  .bss             zero     0x20000438     0x4  os_cpu_c.o [9]
+  .bss             zero     0x2000043c     0x4  cpu_core.o [7]
+  .bss             zero     0x20000440     0x4  cpu_core.o [7]
   .bss             zero     0x20000444     0x4  cpu_core.o [7]
   .bss             zero     0x20000448     0x4  cpu_core.o [7]
   .bss             zero     0x2000044c     0x4  cpu_core.o [7]
-  .bss             zero     0x20000450     0x4  cpu_core.o [7]
-  .bss             zero     0x20000454     0x4  cpu_core.o [7]
+  .bss             zero     0x20000450     0x4  __dbg_uCOS-III.o [9]
+  .bss             zero     0x20000454     0x4  __dbg_uCOS-III.o [9]
   .bss             zero     0x20000458     0x4  __dbg_uCOS-III.o [9]
   .bss             zero     0x2000045c     0x4  __dbg_uCOS-III.o [9]
   .bss             zero     0x20000460     0x4  __dbg_uCOS-III.o [9]
@@ -198,24 +288,22 @@ No sections matched the following patterns:
   .bss             zero     0x20000468     0x4  __dbg_uCOS-III.o [9]
   .bss             zero     0x2000046c     0x4  __dbg_uCOS-III.o [9]
   .bss             zero     0x20000470     0x4  __dbg_uCOS-III.o [9]
-  .bss             zero     0x20000474     0x4  __dbg_uCOS-III.o [9]
-  .bss             zero     0x20000478     0x4  __dbg_uCOS-III.o [9]
-  .bss             zero     0x2000047c     0x4  os_prio.o [9]
-  .bss             zero     0x20000480     0x4  xfail_s.o [3]
-  .bss             zero     0x20000484     0x2  cpu_core.o [7]
-  .bss             zero     0x20000486     0x2  cpu_core.o [7]
-  .bss             zero     0x20000488     0x1  __dbg_uCOS-III.o [9]
-  .bss             zero     0x20000489     0x1  __dbg_uCOS-III.o [9]
-  .bss             zero     0x2000048a     0x1  __dbg_uCOS-III.o [9]
-  .bss             zero     0x2000048b     0x1  __dbg_uCOS-III.o [9]
-  .bss             zero     0x2000048c     0x1  __dbg_uCOS-III.o [9]
-  .bss             zero     0x2000048d     0x1  __dbg_uCOS-III.o [9]
-                          - 0x2000048e   0x48e
+  .bss             zero     0x20000474     0x4  os_prio.o [9]
+  .bss             zero     0x20000478     0x4  xfail_s.o [3]
+  .bss             zero     0x2000047c     0x2  cpu_core.o [7]
+  .bss             zero     0x2000047e     0x2  cpu_core.o [7]
+  .bss             zero     0x20000480     0x1  __dbg_uCOS-III.o [9]
+  .bss             zero     0x20000481     0x1  __dbg_uCOS-III.o [9]
+  .bss             zero     0x20000482     0x1  __dbg_uCOS-III.o [9]
+  .bss             zero     0x20000483     0x1  __dbg_uCOS-III.o [9]
+  .bss             zero     0x20000484     0x1  __dbg_uCOS-III.o [9]
+  .bss             zero     0x20000485     0x1  __dbg_uCOS-III.o [9]
+                          - 0x20000486   0x486
 
 "P3", part 2 of 2:                       0x200
-  CSTACK                    0x20000490   0x200  <Block>
-    CSTACK         uninit   0x20000490   0x200  <Block tail>
-                          - 0x20000690   0x200
+  CSTACK                    0x20000488   0x200  <Block>
+    CSTACK         uninit   0x20000488   0x200  <Block tail>
+                          - 0x20000688   0x200
 
 
 *******************************************************************************
@@ -225,8 +313,8 @@ No sections matched the following patterns:
           Address     Size
           -------     ----
 Zero (__iar_zero_init3)
-    1 destination range, total size 0x48e:
-          0x20000000  0x48e
+    1 destination range, total size 0x486:
+          0x20000000  0x486
 
 
 
@@ -236,10 +324,10 @@ Zero (__iar_zero_init3)
 
     Module              ro code  ro data  rw data
     ------              -------  -------  -------
-C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj: [1]
-    Error.o                 232      232        8
-    PktParser.o             364
-    Prog1.o                 616      632
+C:\Users\Kian\Documents\UMASS Lowell Masters Artifical Intelligence\Spring 2018\Embedded Real Time Systems EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj: [1]
+    Error.o                 148      236
+    PktParser.o             308
+    Prog1.o                 644      540
     app_vect.o               14      336
     bsp.o                   316                 4
     bsp_int.o               680               272
@@ -250,7 +338,7 @@ C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj: [1]
     stm32f10x_rcc.o       1 152       20
     stm32f10x_usart.o       232
     ---------------------------------------------
-    Total:                4 466    1 220      368
+    Total:                4 354    1 132      360
 
 command line: [2]
     ---------------------------------------------
@@ -328,7 +416,7 @@ uCOS-III-CM3-IAR.a: [9]
     Gaps                     32        2
     Linker created                    16      512
 -------------------------------------------------
-    Grand Total:         14 230    1 238    1 678
+    Grand Total:         14 118    1 150    1 670
 
 
 *******************************************************************************
@@ -337,12 +425,12 @@ uCOS-III-CM3-IAR.a: [9]
 
 Entry                      Address   Size  Type      Object
 -----                      -------   ----  ----      ------
-.iar.init_table$$Base   0x08003b90          --   Gb  - Linker created -
-.iar.init_table$$Limit  0x08003ba0          --   Gb  - Linker created -
-?main                   0x08003be1         Code  Gb  cmain.o [5]
-ADCPrescTable           0x08003c68    0x4  Data  Lc  stm32f10x_rcc.o [1]
-APBAHBPrescTable        0x08003c4c   0x10  Data  Lc  stm32f10x_rcc.o [1]
-AppMain                 0x08002e75   0x88  Code  Gb  Prog1.o [1]
+.iar.init_table$$Base   0x08003ac4          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x08003ad4          --   Gb  - Linker created -
+?main                   0x08003b35         Code  Gb  cmain.o [5]
+ADCPrescTable           0x08003ba0    0x4  Data  Lc  stm32f10x_rcc.o [1]
+APBAHBPrescTable        0x08003b84   0x10  Data  Lc  stm32f10x_rcc.o [1]
+AppMain                 0x08002e75   0x86  Code  Gb  Prog1.o [1]
 App_BusFault_ISR        0x08000f73    0x2  Code  Lc  app_vect.o [1]
 App_Fault_ISR           0x08000f71    0x2  Code  Lc  app_vect.o [1]
 App_MemFault_ISR        0x08000f77    0x2  Code  Lc  app_vect.o [1]
@@ -351,7 +439,7 @@ App_Reserved_ISR        0x08000f7b    0x2  Code  Lc  app_vect.o [1]
 App_Spurious_ISR        0x08000f79    0x2  Code  Lc  app_vect.o [1]
 App_UsageFault_ISR      0x08000f75    0x2  Code  Lc  app_vect.o [1]
 BSP_CPU_ClkFreq         0x0800251b   0x10  Code  Gb  bsp.o [1]
-BSP_CPU_ClkFreq_MHz     0x2000043c    0x4  Data  Gb  bsp.o [1]
+BSP_CPU_ClkFreq_MHz     0x20000434    0x4  Data  Gb  bsp.o [1]
 BSP_Init                0x08002451   0xca  Code  Gb  bsp.o [1]
 BSP_IntDisAll           0x08002bb5    0x8  Code  Gb  bsp_int.o [1]
 BSP_IntHandler          0x08002e1f   0x38  Code  Lc  bsp_int.o [1]
@@ -422,34 +510,34 @@ BSP_IntHandlerUSBWakeUp
 BSP_IntHandlerWWDG      0x08002bbd    0xa  Code  Gb  bsp_int.o [1]
 BSP_IntVectTbl          0x20000000  0x110  Data  Lc  bsp_int.o [1]
 BSP_LED_Init            0x0800252b   0x28  Code  Lc  bsp.o [1]
-BSP_PeriphEn            0x0800343d   0x84  Code  Gb  bsp_periph.o [1]
-BSP_Ser_Init            0x080030c5   0xa4  Code  Gb  bsp_ser.o [1]
-BSP_Ser_Printf          0x08003169   0x1e  Code  Gb  bsp_ser.o [1]
+BSP_PeriphEn            0x080033cd   0x84  Code  Gb  bsp_periph.o [1]
+BSP_Ser_Init            0x080030e1   0xa4  Code  Gb  bsp_ser.o [1]
+BSP_Ser_Printf          0x08003185   0x1e  Code  Gb  bsp_ser.o [1]
 BSP_Ser_Printf::buffer  0x200003e0   0x54  Data  Lc  bsp_ser.o [1]
-BSP_Ser_RdByte          0x08003187   0x10  Code  Gb  bsp_ser.o [1]
-BSP_Ser_WrByte          0x08003197   0x12  Code  Gb  bsp_ser.o [1]
-BSP_Ser_WrStr           0x080031bd   0x2c  Code  Gb  bsp_ser.o [1]
+BSP_Ser_RdByte          0x080031a3   0x10  Code  Gb  bsp_ser.o [1]
+BSP_Ser_WrByte          0x080031b3   0x12  Code  Gb  bsp_ser.o [1]
+BSP_Ser_WrStr           0x080031d9   0x2c  Code  Gb  bsp_ser.o [1]
 BSP_StatusInit          0x08002553   0x1e  Code  Lc  bsp.o [1]
 CPU_CntLeadZeros        0x0800220f         Code  Gb  cpu_a.o [7]
 CPU_IntDis              0x080021f9         Code  Gb  cpu_a.o [7]
-CPU_IntDisMeasCtr       0x20000484    0x2  Data  Gb  cpu_core.o [7]
+CPU_IntDisMeasCtr       0x2000047c    0x2  Data  Gb  cpu_core.o [7]
 CPU_IntDisMeasMaxCalc   0x080022d5   0x1a  Code  Lc  cpu_core.o [7]
 CPU_IntDisMeasMaxCurGet
                         0x08002247   0x24  Code  Gb  cpu_core.o [7]
 CPU_IntDisMeasMaxCurReset
                         0x08002225   0x22  Code  Gb  cpu_core.o [7]
 CPU_IntDisMeasMaxCur_cnts
-                        0x20000450    0x4  Data  Gb  cpu_core.o [7]
-CPU_IntDisMeasMax_cnts  0x20000454    0x4  Data  Gb  cpu_core.o [7]
+                        0x20000448    0x4  Data  Gb  cpu_core.o [7]
+CPU_IntDisMeasMax_cnts  0x2000044c    0x4  Data  Gb  cpu_core.o [7]
 CPU_IntDisMeasOvrhd_cnts
-                        0x2000044c    0x4  Data  Gb  cpu_core.o [7]
+                        0x20000444    0x4  Data  Gb  cpu_core.o [7]
 CPU_IntDisMeasStart     0x0800226b   0x28  Code  Gb  cpu_core.o [7]
 CPU_IntDisMeasStart_cnts
-                        0x20000444    0x4  Data  Gb  cpu_core.o [7]
+                        0x2000043c    0x4  Data  Gb  cpu_core.o [7]
 CPU_IntDisMeasStop      0x08002293   0x42  Code  Gb  cpu_core.o [7]
 CPU_IntDisMeasStop_cnts
-                        0x20000448    0x4  Data  Gb  cpu_core.o [7]
-CPU_IntDisNestCtr       0x20000486    0x2  Data  Gb  cpu_core.o [7]
+                        0x20000440    0x4  Data  Gb  cpu_core.o [7]
+CPU_IntDisNestCtr       0x2000047e    0x2  Data  Gb  cpu_core.o [7]
 CPU_IntEn               0x080021fd         Code  Gb  cpu_a.o [7]
 CPU_RevBits             0x08002215         Code  Gb  cpu_a.o [7]
 CPU_SR_Restore          0x08002209         Code  Gb  cpu_a.o [7]
@@ -457,9 +545,8 @@ CPU_SR_Save             0x08002201         Code  Gb  cpu_a.o [7]
 CPU_TS_TmrRd            0x08002571    0x6  Code  Gb  bsp.o [1]
 CPU_WaitForExcept       0x0800221f         Code  Gb  cpu_a.o [7]
 CPU_WaitForInt          0x0800221b         Code  Gb  cpu_a.o [7]
-CSTACK$$Base            0x20000490          --   Gb  - Linker created -
-CSTACK$$Limit           0x20000690          --   Gb  - Linker created -
-Clear_Errors            0x0800338d   0x26  Code  Gb  Error.o [1]
+CSTACK$$Base            0x20000488          --   Gb  - Linker created -
+CSTACK$$Limit           0x20000688          --   Gb  - Linker created -
 FLASH_PrefetchBufferCmd
                         0x08002a2d   0x20  Code  Gb  stm32f10x_flash.o [1]
 FLASH_SetLatency        0x08002a0d   0x20  Code  Gb  stm32f10x_flash.o [1]
@@ -471,35 +558,35 @@ OSIdleTaskTCB           0x20000110   0xd0  Data  Gb  __dbg_uCOS-III.o [9]
 OSIntCtxSw              0x0800238f         Code  Gb  os_cpu_a.o [9]
 OSIntEnter              0x08001c4d   0x24  Code  Gb  os_core.o [9]
 OSIntExit               0x08001c71  0x104  Code  Gb  os_core.o [9]
-OSIntNestingCtr         0x20000488    0x1  Data  Gb  __dbg_uCOS-III.o [9]
-OSPrioCur               0x2000048a    0x1  Data  Gb  __dbg_uCOS-III.o [9]
-OSPrioHighRdy           0x2000048b    0x1  Data  Gb  __dbg_uCOS-III.o [9]
-OSPrioTbl               0x2000047c    0x4  Data  Gb  os_prio.o [9]
+OSIntNestingCtr         0x20000480    0x1  Data  Gb  __dbg_uCOS-III.o [9]
+OSPrioCur               0x20000482    0x1  Data  Gb  __dbg_uCOS-III.o [9]
+OSPrioHighRdy           0x20000483    0x1  Data  Gb  __dbg_uCOS-III.o [9]
+OSPrioTbl               0x20000474    0x4  Data  Gb  os_prio.o [9]
 OSRdyList               0x20000380   0x60  Data  Gb  __dbg_uCOS-III.o [9]
-OSRunning               0x20000489    0x1  Data  Gb  __dbg_uCOS-III.o [9]
+OSRunning               0x20000481    0x1  Data  Gb  __dbg_uCOS-III.o [9]
 OSSched                 0x08001d75   0xca  Code  Gb  os_core.o [9]
-OSSchedLockNestingCtr   0x2000048c    0x1  Data  Gb  __dbg_uCOS-III.o [9]
-OSSchedLockTimeMaxCur   0x20000460    0x4  Data  Gb  __dbg_uCOS-III.o [9]
+OSSchedLockNestingCtr   0x20000484    0x1  Data  Gb  __dbg_uCOS-III.o [9]
+OSSchedLockTimeMaxCur   0x20000458    0x4  Data  Gb  __dbg_uCOS-III.o [9]
 OSSchedRoundRobinDfltTimeQuanta
-                        0x20000464    0x4  Data  Gb  __dbg_uCOS-III.o [9]
-OSSchedRoundRobinEn     0x2000048d    0x1  Data  Gb  __dbg_uCOS-III.o [9]
+                        0x2000045c    0x4  Data  Gb  __dbg_uCOS-III.o [9]
+OSSchedRoundRobinEn     0x20000485    0x1  Data  Gb  __dbg_uCOS-III.o [9]
 OSStartHighRdy          0x08002369         Code  Gb  os_cpu_a.o [9]
-OSTCBCurPtr             0x20000474    0x4  Data  Gb  __dbg_uCOS-III.o [9]
-OSTCBHighRdyPtr         0x20000478    0x4  Data  Gb  __dbg_uCOS-III.o [9]
-OSTaskCtxSwCtr          0x20000468    0x4  Data  Gb  __dbg_uCOS-III.o [9]
-OSTaskSemPost           0x080035ed   0x26  Code  Gb  os_task.o [9]
-OSTaskSwHook            0x080036f1   0x98  Code  Gb  os_cpu_c.o [9]
+OSTCBCurPtr             0x2000046c    0x4  Data  Gb  __dbg_uCOS-III.o [9]
+OSTCBHighRdyPtr         0x20000470    0x4  Data  Gb  __dbg_uCOS-III.o [9]
+OSTaskCtxSwCtr          0x20000460    0x4  Data  Gb  __dbg_uCOS-III.o [9]
+OSTaskSemPost           0x0800357d   0x26  Code  Gb  os_task.o [9]
+OSTaskSwHook            0x08003681   0x98  Code  Gb  os_cpu_c.o [9]
 OSTickTaskTCB           0x200001e0   0xd0  Data  Gb  __dbg_uCOS-III.o [9]
-OSTimeTick              0x080037e1   0x46  Code  Gb  os_time.o [9]
-OSTimeTickHook          0x08003789   0x12  Code  Gb  os_cpu_c.o [9]
+OSTimeTick              0x08003771   0x46  Code  Gb  os_time.o [9]
+OSTimeTickHook          0x08003719   0x12  Code  Gb  os_cpu_c.o [9]
 OSTmrTaskTCB            0x200002b0   0xd0  Data  Gb  __dbg_uCOS-III.o [9]
-OSTmrUpdateCnt          0x2000046c    0x4  Data  Gb  __dbg_uCOS-III.o [9]
-OSTmrUpdateCtr          0x20000470    0x4  Data  Gb  __dbg_uCOS-III.o [9]
-OS_AppTaskSwHookPtr     0x20000458    0x4  Data  Gb  __dbg_uCOS-III.o [9]
-OS_AppTimeTickHookPtr   0x2000045c    0x4  Data  Gb  __dbg_uCOS-III.o [9]
-OS_CPU_ExceptStkBase    0x20000440    0x4  Data  Gb  os_cpu_c.o [9]
+OSTmrUpdateCnt          0x20000464    0x4  Data  Gb  __dbg_uCOS-III.o [9]
+OSTmrUpdateCtr          0x20000468    0x4  Data  Gb  __dbg_uCOS-III.o [9]
+OS_AppTaskSwHookPtr     0x20000450    0x4  Data  Gb  __dbg_uCOS-III.o [9]
+OS_AppTimeTickHookPtr   0x20000454    0x4  Data  Gb  __dbg_uCOS-III.o [9]
+OS_CPU_ExceptStkBase    0x20000438    0x4  Data  Gb  os_cpu_c.o [9]
 OS_CPU_PendSVHandler    0x08002397         Code  Gb  os_cpu_a.o [9]
-OS_CPU_SysTickHandler   0x0800379b   0x2e  Code  Gb  os_cpu_c.o [9]
+OS_CPU_SysTickHandler   0x0800372b   0x2e  Code  Gb  os_cpu_c.o [9]
 OS_PendDbgNameRemove    0x08001e3f   0x28  Code  Gb  os_core.o [9]
 OS_PendListRemove       0x08001e6d   0x38  Code  Gb  os_core.o [9]
 OS_PendListRemove1      0x08001ea5   0x54  Code  Gb  os_core.o [9]
@@ -514,18 +601,27 @@ OS_RdyListMoveHeadToTail
                         0x080020bd   0x4a  Code  Gb  os_core.o [9]
 OS_SchedRoundRobin      0x0800210d   0xac  Code  Gb  os_core.o [9]
 OS_TaskRdy              0x080021dd   0x1a  Code  Gb  os_core.o [9]
-OS_TaskSemPost          0x08003613   0xda  Code  Gb  os_task.o [9]
+OS_TaskSemPost          0x080035a3   0xda  Code  Gb  os_task.o [9]
 OS_TickListRemove       0x080023fd   0x52  Code  Gb  os_tick.o [9]
-ParsePkt                0x080031e9  0x132  Code  Gb  PktParser.o [1]
-PrintDateTime           0x08002fbf   0x6c  Code  Gb  Prog1.o [1]
-PrintHumidity           0x08002f2d   0x16  Code  Gb  Prog1.o [1]
-PrintID                 0x0800306b   0x26  Code  Gb  Prog1.o [1]
-PrintPrecipitation      0x0800302b   0x40  Code  Gb  Prog1.o [1]
-PrintPressure           0x08002f0f   0x1e  Code  Gb  Prog1.o [1]
-PrintRadiation          0x08002fa1   0x1e  Code  Gb  Prog1.o [1]
-PrintTemprature         0x08002efd   0x12  Code  Gb  Prog1.o [1]
-PrintWind               0x08002f43   0x5e  Code  Gb  Prog1.o [1]
-Print_Errors            0x080033b3   0x6a  Code  Gb  Error.o [1]
+ParsePkt                0x08003205  0x134  Code  Gb  PktParser.o [1]
+PrintDateTime           0x08002fd3   0x70  Code  Gb  Prog1.o [1]
+PrintHumidity           0x08002f33   0x1a  Code  Gb  Prog1.o [1]
+PrintID                 0x08003089   0x2a  Code  Gb  Prog1.o [1]
+PrintPrecipitation      0x08003043   0x46  Code  Gb  Prog1.o [1]
+PrintPressure           0x08002f11   0x22  Code  Gb  Prog1.o [1]
+PrintRadiation          0x08002fb1   0x22  Code  Gb  Prog1.o [1]
+PrintTemprature         0x08002efb   0x16  Code  Gb  Prog1.o [1]
+PrintWind               0x08002f4d   0x64  Code  Gb  Prog1.o [1]
+Print_Checksum_Error    0x08003369    0xa  Code  Gb  Error.o [1]
+Print_Destination_Addr_Error
+                        0x080033a5    0xa  Code  Gb  Error.o [1]
+Print_PacketLength_Error
+                        0x0800339b    0xa  Code  Gb  Error.o [1]
+Print_Preamble1_Error   0x0800337d    0xa  Code  Gb  Error.o [1]
+Print_Preamble2_Error   0x08003387    0xa  Code  Gb  Error.o [1]
+Print_Preamble3_Error   0x08003391    0xa  Code  Gb  Error.o [1]
+Print_Unknown_Msg_Error
+                        0x08003373    0xa  Code  Gb  Error.o [1]
 RCC_ADCCLKConfig        0x08002787   0x16  Code  Gb  stm32f10x_rcc.o [1]
 RCC_APB2PeriphClockCmd  0x08002959   0x20  Code  Gb  stm32f10x_rcc.o [1]
 RCC_DeInit              0x0800258d   0x5e  Code  Gb  stm32f10x_rcc.o [1]
@@ -547,20 +643,12 @@ RCC_PREDIV1Config       0x0800267d   0x20  Code  Gb  stm32f10x_rcc.o [1]
 RCC_PREDIV2Config       0x0800269d   0x16  Code  Gb  stm32f10x_rcc.o [1]
 RCC_SYSCLKConfig        0x08002721   0x16  Code  Gb  stm32f10x_rcc.o [1]
 RCC_WaitForHSEStartUp   0x08002641   0x3c  Code  Gb  stm32f10x_rcc.o [1]
-Region$$Table$$Base     0x08003b90          --   Gb  - Linker created -
-Region$$Table$$Limit    0x08003ba0          --   Gb  - Linker created -
-Set_Checksum_Error      0x08003355    0x8  Code  Gb  Error.o [1]
-Set_Destination_Addr_Error
-                        0x08003385    0x8  Code  Gb  Error.o [1]
-Set_PacketLength_Error  0x0800337d    0x8  Code  Gb  Error.o [1]
-Set_Preamble1_Error     0x08003365    0x8  Code  Gb  Error.o [1]
-Set_Preamble2_Error     0x0800336d    0x8  Code  Gb  Error.o [1]
-Set_Preamble3_Error     0x08003375    0x8  Code  Gb  Error.o [1]
-Set_Unknown_Msg_Error   0x0800335d    0x8  Code  Gb  Error.o [1]
-Synchronize             0x08003321   0x34  Code  Gb  PktParser.o [1]
-USART_ClockInit         0x08003575   0x22  Code  Gb  stm32f10x_usart.o [1]
-USART_Cmd               0x08003597   0x1e  Code  Gb  stm32f10x_usart.o [1]
-USART_Init              0x080034cd   0xa4  Code  Gb  stm32f10x_usart.o [1]
+Region$$Table$$Base     0x08003ac4          --   Gb  - Linker created -
+Region$$Table$$Limit    0x08003ad4          --   Gb  - Linker created -
+Synchronize             0x08003339   0x30  Code  Gb  Error.o [1]
+USART_ClockInit         0x08003505   0x22  Code  Gb  stm32f10x_usart.o [1]
+USART_Cmd               0x08003527   0x1e  Code  Gb  stm32f10x_usart.o [1]
+USART_Init              0x0800345d   0xa4  Code  Gb  stm32f10x_usart.o [1]
 _GenldFullNoMb          0x08000c6f  0x274  Code  Lc  xprintffull_nomb.o [3]
 _LdtobFullNoMb          0x08000845  0x3fe  Code  Lc  xprintffull_nomb.o [3]
 _LitobFullNoMb          0x080006ed  0x112  Code  Lc  xprintffull_nomb.o [3]
@@ -583,33 +671,32 @@ __aeabi_memcpy4         0x08001465         Code  Gb  ABImemcpy.o [5]
 __aeabi_memcpy8         0x08001465         Code  Gb  ABImemcpy.o [5]
 __aeabi_ui2d            0x08001aad         Code  Gb  U32ToDbl.o [4]
 __aeabi_uldivmod        0x08001071         Code  Gb  I64DivMod.o [5]
-__cmain                 0x08003be1         Code  Gb  cmain.o [5]
+__cmain                 0x08003b35         Code  Gb  cmain.o [5]
 __exit                  0x08001c39   0x14  Code  Gb  exit.o [6]
 __iar_Fail_s            0x08000f9d   0x1e  Code  Gb  xfail_s.o [3]
 __iar_Memchr            0x08001019         Code  Gb  memchr.o [5]
 __iar_Strchr            0x08000f7d         Code  Gb  strchr.o [5]
 __iar_dadd              0x08001769         Code  Gb  DblSub.o [4]
-__iar_data_init3        0x08003ad9   0x28  Code  Gb  data_init.o [5]
+__iar_data_init3        0x08003a0d   0x28  Code  Gb  data_init.o [5]
 __iar_dsub              0x08001ad1         Code  Gb  DblAdd.o [4]
 __iar_dsubStart         0x08001ae3         Code  Gb  DblAdd.o [4]
 __iar_frexp             0x080014f9         Code  Gb  frexp.o [4]
 __iar_frexp64           0x080014ed         Code  Gb  frexp.o [4]
 __iar_frexpl            0x080014f9         Code  Gb  frexp.o [4]
 __iar_ldexp64           0x080015bd         Code  Gb  ldexp.o [4]
-__iar_program_start     0x08003c5d         Code  Gb  cstartup_M.o [5]
+__iar_program_start     0x08003b95         Code  Gb  cstartup_M.o [5]
 __iar_scalbln64         0x080015bd         Code  Gb  ldexp.o [4]
 __iar_scalbn64          0x080015bd         Code  Gb  ldexp.o [4]
 __iar_systems$$module {Abs}
                         0x00000001         Data  Gb  command line/config [2]
-__iar_zero_init3        0x08003a05   0x40  Code  Gb  zero_init3.o [5]
-__low_level_init        0x08003bff    0x4  Code  Gb  low_level_init.o [3]
+__iar_zero_init3        0x08003935   0x40  Code  Gb  zero_init3.o [5]
+__low_level_init        0x08003b53    0x4  Code  Gb  low_level_init.o [3]
 __vector_table          0x08000000  0x150  Data  Gb  app_vect.o [1]
-_call_main              0x08003bed         Code  Gb  cmain.o [5]
-_exit                   0x08003c09         Code  Gb  cexit.o [5]
-_main                   0x08003bfb         Code  Gb  cmain.o [5]
+_call_main              0x08003b41         Code  Gb  cmain.o [5]
+_exit                   0x08003b5d         Code  Gb  cexit.o [5]
+_main                   0x08003b4f         Code  Gb  cmain.o [5]
 abort                   0x08001ac7    0x6  Code  Gb  abort.o [3]
-err                     0x20000434    0x8  Data  Lc  Error.o [1]
-exit                    0x08003c03    0x4  Code  Gb  exit.o [3]
+exit                    0x08003b57    0x4  Code  Gb  exit.o [3]
 frexp                   0x080014ed         Code  Gb  frexp.o [4]
 frexpl                  0x080014ed         Code  Gb  frexp.o [4]
 ldexp                   0x080015bd         Code  Gb  ldexp.o [4]
@@ -621,13 +708,13 @@ scalblnl                0x080015bd         Code  Gb  ldexp.o [4]
 scalbn                  0x080015bd         Code  Gb  ldexp.o [4]
 scalbnl                 0x080015bd         Code  Gb  ldexp.o [4]
 scale                   0x080007ff   0x46  Code  Lc  xprintffull_nomb.o [3]
-sec_hand                0x20000480    0x4  Data  Lc  xfail_s.o [3]
+sec_hand                0x20000478    0x4  Data  Lc  xfail_s.o [3]
 strchr                  0x08000f7d         Code  Gb  strchr.o [5]
 strlen                  0x08000fe1         Code  Gb  strlen.o [5]
-vsprintf                0x080035b5   0x38  Code  Gb  vsprintf.o [3]
+vsprintf                0x08003545   0x38  Code  Gb  vsprintf.o [3]
 
 
-[1] = C:\Users\kianu\Programs\Wireless_Sensor_Network\App\Flash\Obj
+[1] = C:\Users\Kian\Documents\UMASS Lowell Masters Artifical Intelligence\Spring 2018\Embedded Real Time Systems EECE5720\Programs\Wireless_Sensor_Network\App\Flash\Obj
 [2] = command line
 [3] = dl7M_tln.a
 [4] = m7M_tl.a
@@ -637,9 +724,9 @@ vsprintf                0x080035b5   0x38  Code  Gb  vsprintf.o [3]
 [8] = uC-LIB-CM3-IAR.a
 [9] = uCOS-III-CM3-IAR.a
 
-  14 230 bytes of readonly  code memory
-   1 238 bytes of readonly  data memory
-   1 678 bytes of readwrite data memory
+  14 118 bytes of readonly  code memory
+   1 150 bytes of readonly  data memory
+   1 670 bytes of readwrite data memory
 
 Errors: none
 Warnings: none

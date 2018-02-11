@@ -31,9 +31,7 @@ void ParsePkt(void *payloadBfr)
         {
           
             c = GetByte();
-            //BSP_Ser_Printf("GetByte c: %x \n", c);
 
-            xor_sum = xor_sum ^ c;
           switch(parseState)
           {
           
@@ -41,13 +39,15 @@ void ParsePkt(void *payloadBfr)
              if (c == P1Char)
              {
                 parseState = P2;
-                xor_sum = xor_sum ^ c;
+                xor_sum =  c;
              }
              else
              {
-                Set_Preamble1_Error();
-                Print_Errors();
+                Print_Preamble1_Error();
                 Synchronize();
+                xor_sum = P1Char ^ P2Char ^P3Char;
+                //BSP_Ser_Printf("P1 recovered xor_sum: %x \n", xor_sum);
+
                 parseState = K;
              }
              break;
@@ -59,9 +59,9 @@ void ParsePkt(void *payloadBfr)
              }
              else
              {
-                Set_Preamble2_Error();
-                Print_Errors();
+                Print_Preamble2_Error();
                 Synchronize();
+                xor_sum = P1Char ^ P2Char ^P3Char;
                 parseState = K;
 
              }
@@ -75,56 +75,52 @@ void ParsePkt(void *payloadBfr)
              }
              else
              {
-                Set_Preamble3_Error();
-                Print_Errors();
+                Print_Preamble3_Error();
                 Synchronize();
+                xor_sum = P1Char ^ P2Char ^P3Char;
                 parseState = K;
 
              }
              break;
           case K:
-            pktBfr->payLoadLen = c - HeaderLength;
-            if (pktBfr->payLoadLen > 8)
+            if (c < 8)
             {
-                Set_PacketLength_Error;
-                Print_Errors();
+                Print_PacketLength_Error();
                 Synchronize();
-                parseState = K;
-
+                xor_sum = P1Char ^ P2Char ^P3Char; //accumulate preambles
+                parseState = K; //first 3 preambles have been read
             }
+            else //length is ok
+            {    
+            pktBfr->payLoadLen = c - HeaderLength;
             xor_sum = xor_sum ^ c;
             parseState = D;
-            i = 0;
+            } 
+            i = 0; //start at first index every time this state is completed
             break;
           case D:
-            pktBfr->data[i++] = c;
-
-            //BSP_Ser_Printf("c: %x \n", c);
-            //BSP_Ser_Printf("pktBfr->data:  %x \n", pktBfr->data[i]);
-            //BSP_Ser_Printf("xor_sum: %x \n", xor_sum);
-
-            if(pktBfr->data[0] != 0x01)
+            
+            pktBfr->data[i] = c;
+            if (pktBfr->data[0] != 0x01)
             {
-                Set_Destination_Addr_Error();
-                Print_Errors();
+                Print_Destination_Addr_Error();
                 Synchronize();
+                xor_sum = P1Char ^ P2Char ^P3Char;
                 parseState = K;
-
             }
-            if (i < pktBfr->payLoadLen)
+            if (i < pktBfr->payLoadLen - 1)
             {
-              xor_sum = xor_sum ^ c;
-              //BSP_Ser_Printf("if xor_sum: %x \n", xor_sum);
+              xor_sum = xor_sum ^ c;        //collecting checksum data
             }
 
-            if (i >= pktBfr->payLoadLen)
+            if (i >= pktBfr->payLoadLen - 1)
             {
 
               if(c != xor_sum)
               {
-                Set_Checksum_Error();
-                Print_Errors();
+                Print_Checksum_Error();
                 Synchronize();
+                xor_sum = P1Char ^ P2Char ^P3Char;
                 parseState = K;
 
               } 
@@ -132,6 +128,7 @@ void ParsePkt(void *payloadBfr)
                 return;
               }
             }
+            i++;
             break;
           default:
             parseState = K;
@@ -141,36 +138,3 @@ void ParsePkt(void *payloadBfr)
         }//end forever loop
         
 }//end routine
-        
-        
-        void Synchronize()
-{
-
-    CPU_INT08U temp = 0;
-    CPU_INT08U preamble1confirmed = 0;
-    CPU_INT32S checksum = 0;
-        
-    while(1)
-    {
-             temp = GetByte();
-             //BSP_Ser_Printf(" temp initial: %x \n", temp);
-
-             if ( temp == P1Char) //skip until first three legit preamble byte
-             {
-                 temp = GetByte();
-                // BSP_Ser_Printf("preamble 2: %x \n", temp);
-
-                 if ( temp == P2Char) //skip until first three legit preamble byte
-                 {
-                    temp = GetByte();
-                   // BSP_Ser_Printf(" preamble 3: %x \n", temp);
-                     if ( temp == P3Char) //skip until first three legit preamble byte
-                     {
-                     // BSP_Ser_Printf(" recovered: %x \n", temp);
-                      return;
-                     }
-                 }
-             }
-   }
-
-}

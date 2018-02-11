@@ -1,9 +1,8 @@
 /*--------------- P k t P a r s e r . h ---------------*/
 
-#ifndef PktParser_H
-#define PktParser_H
 
-//#pragma once
+//#don't redefine this header
+#pragma pack(1)
 
 /*----- c o n s t a n t    d e f i n i t i o n s -----*/
 
@@ -24,11 +23,4 @@ typedef enum { P1, P2, P3, T, K, D, SYNC} ParserState;
 } PktBfr;
 
 /*----- f u n c t i o n    p r o t o t y p e s -----*/
-
-CPU_INT08U GetByte();
-
 void ParsePkt(void *payloadBfr);
-
-
-
-#endif
